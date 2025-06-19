@@ -1,8 +1,8 @@
-FROM node
+FROM node:12.22.12
 
 RUN mkdir /code
-
 WORKDIR /code
+
 COPY . .
 
 RUN npm install
