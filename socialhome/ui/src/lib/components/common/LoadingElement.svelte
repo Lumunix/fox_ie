@@ -1,22 +1,33 @@
-<div class="cssload-loader-inner">
-  <div class="cssload-cssload-loader-line-wrap-wrap">
-    <div class="cssload-loader-line-wrap"></div>
-  </div>
-  <div class="cssload-cssload-loader-line-wrap-wrap">
-    <div class="cssload-loader-line-wrap"></div>
-  </div>
-  <div class="cssload-cssload-loader-line-wrap-wrap">
-    <div class="cssload-loader-line-wrap"></div>
-  </div>
-  <div class="cssload-cssload-loader-line-wrap-wrap">
-    <div class="cssload-loader-line-wrap"></div>
-  </div>
-  <div class="cssload-cssload-loader-line-wrap-wrap">
-    <div class="cssload-loader-line-wrap"></div>
-  </div>
-</div>
+<!--
+CSS Spinner from Jack Rugile (https://github.com/jaywink/socialhome/pull/289)
+found on http://cssload.net
+-->
 
-<style>
+<template>
+    <div class="cssload-loader-inner">
+        <div class="cssload-cssload-loader-line-wrap-wrap">
+            <div class="cssload-loader-line-wrap" />
+        </div>
+        <div class="cssload-cssload-loader-line-wrap-wrap">
+            <div class="cssload-loader-line-wrap" />
+        </div>
+        <div class="cssload-cssload-loader-line-wrap-wrap">
+            <div class="cssload-loader-line-wrap" />
+        </div>
+        <div class="cssload-cssload-loader-line-wrap-wrap">
+            <div class="cssload-loader-line-wrap" />
+        </div>
+        <div class="cssload-cssload-loader-line-wrap-wrap">
+            <div class="cssload-loader-line-wrap" />
+        </div>
+    </div>
+</template>
+
+<script>
+export default {name: "LoadingElement"}
+</script>
+
+<style lang="scss" scoped>
   .cssload-loader-inner {
     bottom: 0;
     height: 100px;
@@ -27,6 +38,10 @@
     right: 0;
     top: 0;
     width: 100px;
+
+    &.hidden-loader { /* Usefull to keep loader occuping space while not being shown */
+      opacity: 0;
+    }
   }
 
   .cssload-cssload-loader-line-wrap-wrap {
@@ -38,6 +53,10 @@
     position: absolute;
     top: 0;
     transform-origin: 50% 100%;
+    -o-transform-origin: 50% 100%;
+    -ms-transform-origin: 50% 100%;
+    -webkit-transform-origin: 50% 100%;
+    -moz-transform-origin: 50% 100%;
     width: 97px;
   }
 
