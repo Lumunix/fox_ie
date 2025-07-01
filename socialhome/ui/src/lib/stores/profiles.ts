@@ -1,64 +1,139 @@
-import { writable } from 'svelte/store';
+import { writable, derived } from 'svelte/store';
+import axios from 'axios'; // Adjust import depending on your axios config
+import { get as getTranslation } from 'svelte-i18n'; // Or your i18n lib
 
-interface Profile {
-  uuid: string;
-  url: string;
-  home_url?: string;
-  is_local?: boolean;
-  user_following?: boolean;
-  id: string;
+type Profile = {
+    uuid: string;
+    user_following?: boolean;
+    [key: string]: any;
+};
+
+// Internal state
+const all = writable<Record<string, Profile>>({});
+const index = writable<string[]>([]);
+
+// Derived stores (getters)
+
+export const allProfiles = derived(
+    [all, index],
+    ([$all, $index]) => $index.map(uuid => $all[uuid])
+);
+
+export const getProfileSelection = (selection: { uuid: string }[]) =>
+    derived(all, $all => selection.map(profile => $all[profile.uuid]));
+
+export const getByUuid = (uuid: string) =>
+    derived(all, $all => $all[uuid]);
+
+// Mutations as functions
+
+function setFollow(uuid: string, status: boolean) {
+    all.update(current => {
+        if (current[uuid]) current[uuid] = { ...current[uuid], user_following: status };
+        return current;
+    });
 }
 
-interface ProfilesStore {
-  all: Record<string, Profile>;
-  fetchProfile: (uuid: string) => void;
-  follow: (uuid: string) => void;
-  unfollow: (uuid: string) => void;
+function setProfile(profile: Profile) {
+    all.update(current => {
+        if (!current[profile.uuid]) {
+            current[profile.uuid] = profile;
+            index.update(idx => [...idx, profile.uuid]);
+        } else {
+            current[profile.uuid] = { ...current[profile.uuid], ...profile };
+        }
+        return current;
+    });
 }
 
-function createProfilesStore() {
-  const { subscribe, update, set } = writable<ProfilesStore>({
-    all: {},
-    fetchProfile: () => {},
-    follow: () => {},
-    unfollow: () => {},
-  });
+function setProfilesFromContactList(contactList: Profile[]) {
+    all.update(current => {
+        const idxUpdate: string[] = [];
+        contactList.forEach(contact => {
+            if (!current[contact.uuid]) {
+                current[contact.uuid] = contact;
+                idxUpdate.push(contact.uuid);
+            }
+        });
+        index.update(idx => [...idx, ...idxUpdate]);
+        return current;
+    });
+}
 
-  return {
-    subscribe,
-    set,
-    update,
-    fetchProfile(uuid: string) {
-      console.log('Fetching profile for UUID:', uuid);
-      update(store => {
-        store.all[uuid] = {
-          uuid,
-          id: uuid,
-          url: `/profiles/${uuid}`,
-          home_url: 'https://external.example.com/' + uuid,
-          is_local: false,
-          user_following: false
-        };
-        return store;
-      });
-    },
-    follow(uuid: string) {
-      console.log('Following profile:', uuid);
-      update(store => {
-        const profile = store.all[uuid];
-        if (profile) profile.user_following = true;
-        return store;
-      });
-    },
-    unfollow(uuid: string) {
-      console.log('Unfollowing profile:', uuid);
-      update(store => {
-        const profile = store.all[uuid];
-        if (profile) profile.user_following = false;
-        return store;
-      });
+function setProfilesFromContentList(contentList: any[]) {
+    all.update(current => {
+        const idxUpdate: string[] = [];
+        contentList.forEach(content => {
+            const author = content.author;
+            if (author && !current[author.uuid]) {
+                current[author.uuid] = author;
+                idxUpdate.push(author.uuid);
+            }
+            const throughAuthor = content.through_author;
+            if (throughAuthor && !current[throughAuthor.uuid]) {
+                current[throughAuthor.uuid] = throughAuthor;
+                idxUpdate.push(throughAuthor.uuid);
+            }
+        });
+        index.update(idx => [...idx, ...idxUpdate]);
+        return current;
+    });
+}
+
+// Actions as functions
+
+async function follow(uuid: string) {
+    try {
+        await axios.post(Urls["api:profile-follow"]({ uuid }));
+        setFollow(uuid, true);
+    } catch (error) {
+        console.error(error);
+        alert(getTranslation('An error happened while trying to follow.'));
     }
-  };
 }
 
-export const profilesStore = createProfilesStore();
+async function getProfile(uuid: string) {
+    try {
+        const response = await axios.get(Urls["api:profile-detail"]({ uuid }));
+        setProfile(response.data);
+    } catch (error) {
+        console.error(error);
+        alert(getTranslation('An error happened while fetching a profile.'));
+    }
+}
+
+async function requestProfileUpdate(uuid: string) {
+    try {
+        await axios.get(Urls["api:profile-schedule-update"]({ uuid }));
+    } catch (error) {
+        console.error(error);
+        alert(getTranslation('An error happened while requesting a profile update.'));
+    }
+}
+
+async function unFollow(uuid: string) {
+    try {
+        await axios.post(Urls["api:profile-unfollow"]({ uuid }));
+        setFollow(uuid, false);
+    } catch (error) {
+        console.error(error);
+        alert(getTranslation('An error happened while trying to unfollow.'));
+    }
+}
+
+// Export API
+
+export const profilesStore = {
+    all,
+    index,
+    allProfiles,
+    getProfileSelection,
+    getByUuid,
+    follow,
+    getProfile,
+    requestProfileUpdate,
+    setProfilesFromContactList,
+    setProfilesFromContentList,
+    setProfile,
+    unFollow,
+};

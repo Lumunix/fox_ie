@@ -3,16 +3,17 @@
   import { streamStore } from '$lib/stores/stream';
   import StreamElement from '$lib/components/streams/StreamElement.svelte';
   import LoadingElement from '$lib/components/common/LoadingElement.svelte';
-  import ProfileStreamButtons from '$lib/components/ProfileStreamButtons.svelte';
+  import ProfileStreamButtons from '$lib/components/streams/stamped_elements/ProfileStreamButtons.svelte';
 
   // Dynamic component mapping (stubbed)
-  import PublicStampedElement from '$lib/components/stamped/PublicStampedElement.svelte';
-  import FollowedStampedElement from '$lib/components/stamped/FollowedStampedElement.svelte';
-  import LimitedStampedElement from '$lib/components/stamped/LimitedStampedElement.svelte';
-  import LocalStampedElement from '$lib/components/stamped/LocalStampedElement.svelte';
-  import TagStampedElement from '$lib/components/stamped/TagStampedElement.svelte';
-  import TagsStampedElement from '$lib/components/stamped/TagsStampedElement.svelte';
-  import ProfileStampedElement from '$lib/components/stamped/ProfileStampedElement.svelte';
+
+  import PublicStampedElement from '$lib/components/streams/stamped_elements/PublicStampedElement.svelte';
+  import FollowedStampedElement from '$lib/components/streams/stamped_elements/FollowedStampedElement.svelte';
+  import LimitedStampedElement from '$lib/components/streams/stamped_elements/LimitedStampedElement.svelte';
+  import LocalStampedElement from '$lib/components/streams/stamped_elements/LocalStampedElement.svelte';
+  import TagStampedElement from '$lib/components/streams/stamped_elements/TagStampedElement.svelte';
+  import TagsStampedElement from '$lib/components/streams/stamped_elements/TagsStampedElement.svelte';
+  import ProfileStampedElement from '$lib/components/streams/stamped_elements/ProfileStampedElement.svelte';
 
   const stampedComponents = {
     PublicStampedElement,
