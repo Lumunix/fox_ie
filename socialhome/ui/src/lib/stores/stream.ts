@@ -1,7 +1,7 @@
 import { writable } from "svelte/store";
 import axios from "axios";
-import produce from "immer";
-import { Urls } from "$lib/urls"; // Assumes you ported Urls from Django JS reverse or similar
+import { produce } from "immer";
+//import { Urls } from "$lib/urls"; // Assumes you ported Urls from Django JS reverse or similar
 
 interface Content {
   id: string;

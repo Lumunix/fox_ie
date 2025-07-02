@@ -37,7 +37,9 @@
   <div class="author-bar-name-container">
     <Popover>
       <PopoverTrigger>
-        <div class="cursor-pointer font-medium" {@html authorName} />
+        <div class="cursor-pointer font-medium">
+          {@html authorName}
+        </div>
       </PopoverTrigger>
       <PopoverContent class="p-2 bg-white border rounded shadow">
         <div>{authorId}</div>
@@ -52,8 +54,10 @@
         <Popover>
           <PopoverTrigger>
             <div class="cursor-pointer flex items-center text-sm text-gray-500">
-              <i class="fa fa-refresh mr-2 shared-icon" aria-hidden="true" />
-              <span class="ml-1" {@html throughAuthorName} />
+              <i class="fa fa-refresh mr-2 shared-icon" aria-hidden="true"></i>
+              <span class="ml-1">
+                {@html throughAuthorName}
+              </span>
             </div>
           </PopoverTrigger>
           <PopoverContent class="p-2 bg-white border rounded shadow">

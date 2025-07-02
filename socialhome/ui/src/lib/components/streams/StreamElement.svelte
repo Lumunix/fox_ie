@@ -43,7 +43,7 @@
   {/if}
 
   {#if content.is_nsfw}
-    <NsfwShield {tags}={content.tags}>
+    <NsfwShield tags={content.tags}>
       <div id={"c" + content.id}>{@html content.rendered}</div>
     </NsfwShield>
   {:else}
