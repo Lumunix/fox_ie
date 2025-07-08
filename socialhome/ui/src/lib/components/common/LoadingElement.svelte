@@ -3,31 +3,29 @@ CSS Spinner from Jack Rugile (https://github.com/jaywink/socialhome/pull/289)
 found on http://cssload.net
 -->
 
-<template>
-    <div class="cssload-loader-inner">
-        <div class="cssload-cssload-loader-line-wrap-wrap">
-            <div class="cssload-loader-line-wrap" />
-        </div>
-        <div class="cssload-cssload-loader-line-wrap-wrap">
-            <div class="cssload-loader-line-wrap" />
-        </div>
-        <div class="cssload-cssload-loader-line-wrap-wrap">
-            <div class="cssload-loader-line-wrap" />
-        </div>
-        <div class="cssload-cssload-loader-line-wrap-wrap">
-            <div class="cssload-loader-line-wrap" />
-        </div>
-        <div class="cssload-cssload-loader-line-wrap-wrap">
-            <div class="cssload-loader-line-wrap" />
-        </div>
-    </div>
-</template>
-
 <script>
-export default {name: "LoadingElement"}
+  // Nothing needed here, so you can leave it empty or remove entirely.
 </script>
 
-<style lang="scss" scoped>
+<div class="cssload-loader-inner">
+  <div class="cssload-cssload-loader-line-wrap-wrap">
+    <div class="cssload-loader-line-wrap"></div>
+  </div>
+  <div class="cssload-cssload-loader-line-wrap-wrap">
+    <div class="cssload-loader-line-wrap"></div>
+  </div>
+  <div class="cssload-cssload-loader-line-wrap-wrap">
+    <div class="cssload-loader-line-wrap"></div>
+  </div>
+  <div class="cssload-cssload-loader-line-wrap-wrap">
+    <div class="cssload-loader-line-wrap"></div>
+  </div>
+  <div class="cssload-cssload-loader-line-wrap-wrap">
+    <div class="cssload-loader-line-wrap"></div>
+  </div>
+</div>
+
+<style lang="scss">
   .cssload-loader-inner {
     bottom: 0;
     height: 100px;
@@ -39,7 +37,7 @@ export default {name: "LoadingElement"}
     top: 0;
     width: 100px;
 
-    &.hidden-loader { /* Usefull to keep loader occuping space while not being shown */
+    &.hidden-loader { /* Useful to keep loader occupying space while not being shown */
       opacity: 0;
     }
   }
@@ -73,25 +71,11 @@ export default {name: "LoadingElement"}
     width: 97px;
   }
 
-  .cssload-cssload-loader-line-wrap-wrap:nth-child(1) {
-    animation-delay: -57.5ms;
-  }
-
-  .cssload-cssload-loader-line-wrap-wrap:nth-child(2) {
-    animation-delay: -115ms;
-  }
-
-  .cssload-cssload-loader-line-wrap-wrap:nth-child(3) {
-    animation-delay: -172.5ms;
-  }
-
-  .cssload-cssload-loader-line-wrap-wrap:nth-child(4) {
-    animation-delay: -230ms;
-  }
-
-  .cssload-cssload-loader-line-wrap-wrap:nth-child(5) {
-    animation-delay: -287.5ms;
-  }
+  .cssload-cssload-loader-line-wrap-wrap:nth-child(1) { animation-delay: -57.5ms; }
+  .cssload-cssload-loader-line-wrap-wrap:nth-child(2) { animation-delay: -115ms; }
+  .cssload-cssload-loader-line-wrap-wrap:nth-child(3) { animation-delay: -172.5ms; }
+  .cssload-cssload-loader-line-wrap-wrap:nth-child(4) { animation-delay: -230ms; }
+  .cssload-cssload-loader-line-wrap-wrap:nth-child(5) { animation-delay: -287.5ms; }
 
   .cssload-cssload-loader-line-wrap-wrap:nth-child(1) .cssload-loader-line-wrap {
     border-color: rgb(234, 71, 71);
