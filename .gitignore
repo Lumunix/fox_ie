@@ -54,6 +54,7 @@ htmlcov
 .sass-cache
 
 # virtual environments
+.venv
 /.env
 
 # User-uploaded media
