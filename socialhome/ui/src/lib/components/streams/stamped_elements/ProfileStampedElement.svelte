@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import ProfileReactionButtons from './ProfileReactionButtons.svelte';
+  import ProfileReactionButtons from '$lib/components/common/ProfileReactionButtons.svelte';
 
   // Replace with your Svelte store implementation
   const getProfile = () => ({
