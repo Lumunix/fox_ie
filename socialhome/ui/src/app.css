@@ -6,7 +6,7 @@
 @import '@skeletonlabs/skeleton';
 @import '@skeletonlabs/skeleton/optional/presets';
 @import '@skeletonlabs/skeleton/themes/cerberus';
-
+@import '@fortawesome/fontawesome-free/css/all.min.css';
 @custom-variant dark (&:where(.dark, .dark *));
 
 body {

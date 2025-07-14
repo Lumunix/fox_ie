@@ -5,10 +5,10 @@
   const currentPath = derived(page, $page => $page.url.pathname);
 </script>
 
-<nav class="bg-white shadow-sm px-6 py-3 mb-6 border-b">
+<nav class="shadow-sm px-6 py-3 mb-6 border-b">
   <div class="max-w-5xl mx-auto flex justify-between items-center">
     <div class="font-bold text-lg text-blue-600">
-      🐦 StreamApp
+      Fox_IE
     </div>
     <div class="space-x-4">
       <a href="/" class="hover:underline text-sm" class:font-semibold={currentPath === '/'}>Home</a>
