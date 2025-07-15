@@ -8,6 +8,6 @@
 
 <Navbar />
 
-<main class="min-h-screen bg-gray-50 text-gray-900">
+<main class="min-h-screen">
 {@render children()}
 </main>
