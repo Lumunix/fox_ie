@@ -1,17 +1,17 @@
 // place files you want to import through the `$lib` alias in this folder.
 // src/lib/stores/index.ts
-import { applicationStore } from "./application";
-import { contactsStore } from "./contacts";
-import { userStore } from "./user";
-import { profilesStore } from "./profiles";
-import { publisherStore } from "./publisher";
-import { streamStore } from "./stream";
+import { applicationStore } from "./stores/application";
+import { contactsStore } from "./stores/contacts";
+//import { userStore } from "./stores/user";
+import { profilesStore } from "./stores/profiles";
+//import { publisherStore } from "./stores/publisher";
+import { streamStore } from "./stores/stream";
 
 export {
     applicationStore,
     contactsStore,
-    userStore,
+    //userStore,
     profilesStore,
-    publisherStore,
+    //publisherStore,
     streamStore,
 };
