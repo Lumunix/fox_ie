@@ -64,6 +64,16 @@ class ContentCreateView(LoginRequiredMixin, TemplateView):
     def post(self, request, *args, **kwargs):
         return super().post(request, *args, **kwargs)
 
+class SvelteKitContentCreateView(TemplateView):
+    template_name = "content/sveltekit.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["json_context"] = {
+            "currentBrowsingProfileId": getattr(getattr(self.request.user, "profile", None), "id", None),
+            "isUserAuthenticated": bool(self.request.user.is_authenticated),
+        }
+        return context
 
 class ContentReplyView(ContentVisibleForUserMixin, ContentCreateView, SingleObjectMixin):
     is_reply = True
@@ -85,7 +95,7 @@ class ContentReplyView(ContentVisibleForUserMixin, ContentCreateView, SingleObje
                 mentions += f'@{self.object.root_parent.author.finger} '
         val.update({'mentions': mentions, 'rendered': self.parent.rendered})
         return(val)
-        
+
 
 class ContentUpdateView(UserOwnsContentMixin, DetailView):
     model = Content

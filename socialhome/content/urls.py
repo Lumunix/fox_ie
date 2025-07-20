@@ -1,4 +1,5 @@
 from django.conf.urls import url
+from django.urls import path
 
 from socialhome.content import views
 
@@ -10,7 +11,7 @@ urlpatterns = [
     url(r"^(?P<pk>[0-9]+)/~edit/$", views.ContentUpdateView.as_view(), name="update"),
     url(r"^(?P<pk>[0-9]+)/~delete/$", views.ContentDeleteView.as_view(), name="delete"),
     url(r"^(?P<pk>[0-9]+)/~reply/$", views.ContentReplyView.as_view(), name="reply"),
-
+    path('sveltekit/', views.SvelteKitContentCreateView.as_view(), name='sveltekit_content_create'),
     # Content detail works with three different versions
     # /content/123/  # pk
     # /content/123/slug/  # pk + slug
@@ -18,4 +19,6 @@ urlpatterns = [
     url(r"^(?P<pk>[0-9]+)/$", views.ContentView.as_view(), name="view"),
     url(r"^(?P<pk>[0-9]+)/(?P<slug>[-\w]+)/$", views.ContentView.as_view(), name="view-by-slug"),
     url(r"^(?P<uuid>[^/]+)/$", views.ContentView.as_view(), name="view-by-uuid"),
+
+
 ]
