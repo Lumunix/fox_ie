@@ -73,9 +73,9 @@
     </div>
   {/if}
 
-  {#if pending.contents}
-    <LoadingElement />
-  {/if}
+  <!--{#if pending.contents}-->
+  <!--  <LoadingElement />-->
+  <!--{/if}-->
 </div>
 
 <style>

@@ -1,3 +1,4 @@
+
 {% extends "base.html" %}
 {% load i18n %}
 {% load static %}
@@ -6,12 +7,33 @@
     {% include "content/_edit_title.html" %}
 {% endblock %}
 
+{% block extra_head %}
+    {{ block.super }}
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Auto-include all CSS files from SvelteKit build -->
+    {% for css_file in sveltekit_assets.css %}
+        <link rel="stylesheet" href="{% static css_file %}">
+    {% endfor %}
+{% endblock %}
+
+{% block body_attrs %}data-sveltekit-preload-data="hover" data-theme="cerberus" class="dark"{% endblock %}
+
 {% block content %}
-    <div id="sveltekit-root"></div>
+    <div style="display: contents" id="svelte">
+        <!-- SvelteKit will hydrate and take over this div -->
+    </div>
 {% endblock %}
 
 {% block javascript %}
     {{ block.super }}
-    <script type="module" src="http://localhost:5173/@vite/client"></script>
-    <script type="module" src="http://localhost:5173/src/app.js"></script>
+
+    <script>
+        window.context = {{ json_context|safe }};
+    </script>
+
+    <!-- Auto-include all JS files from SvelteKit build -->
+    {% for js_file in sveltekit_assets.js %}
+        <script type="module" src="{% static js_file %}"></script>
+    {% endfor %}
 {% endblock %}

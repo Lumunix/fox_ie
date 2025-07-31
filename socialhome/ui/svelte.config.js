@@ -1,18 +1,33 @@
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+import path from 'path';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	// Consult https://svelte.dev/docs/kit/integrations
-	// for more information about preprocessors
-	preprocess: vitePreprocess(),
+    // Keep the existing preprocess configuration
+    preprocess: vitePreprocess(),
 
-	kit: {
-		// adapter-auto only supports some environments, see https://svelte.dev/docs/kit/adapter-auto for a list.
-		// If your environment is not supported, or you settled on a specific environment, switch out the adapter.
-		// See https://svelte.dev/docs/kit/adapters for more information about adapters.
-		adapter: adapter()
-	}
+    kit: {
+        // Configure the static adapter with proper output paths
+        adapter: adapter({
+            // Output to Django's static directory
+            pages: '../static/dist/sveltekit',
+            assets: '../static/dist/sveltekit',
+            fallback: null,
+            precompress: false,
+            strict: true
+        }),
+        // Configure paths for static serving
+        paths: {
+            base: '/static/dist/sveltekit',
+        },
+        // Configure what directories should be treated as static assets
+        files: {
+            assets: 'static',
+            lib: 'src/lib',
+            routes: 'src/routes'
+        }
+    }
 };
 
 export default config;
