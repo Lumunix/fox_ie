@@ -1,7 +1,7 @@
-
 {% extends "base.html" %}
 {% load i18n %}
 {% load static %}
+{% load sveltekit_tags %}
 
 {% block title %}
     {% include "content/_edit_title.html" %}
@@ -12,7 +12,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Auto-include all CSS files from SvelteKit build -->
-    {% for css_file in sveltekit_assets.css %}
+    {% sveltekit_css as css_files %}
+    {% for css_file in css_files %}
         <link rel="stylesheet" href="{% static css_file %}">
     {% endfor %}
 {% endblock %}
@@ -28,12 +29,14 @@
 {% block javascript %}
     {{ block.super }}
 
-    <script>
-        window.context = {{ json_context|safe }};
-    </script>
+    <!-- Django context for SvelteKit -->
+{#    <script>#}
+{#        window.context = {{ json_context|safe }};#}
+{#    </script>#}
 
     <!-- Auto-include all JS files from SvelteKit build -->
-    {% for js_file in sveltekit_assets.js %}
+    {% sveltekit_js as js_files %}
+    {% for js_file in js_files %}
         <script type="module" src="{% static js_file %}"></script>
     {% endfor %}
 {% endblock %}

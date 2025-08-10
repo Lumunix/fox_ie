@@ -30,9 +30,11 @@
         <!-- Compiled project CSS -->
         <link href="{% static "dist/project.css" %}" rel="stylesheet">
     {% endblock %}
+
+    {% block extra_head %}{% endblock %}
 </head>
 
-<body>
+<body {% block body_attrs %}{% endblock %}>
     <nav class="navbar navbar-dark navbar-expand-sm fixed-top bg-dark">
         <div class="container navbar-container">
             <a class="navbar-brand" href="/"><img src="{% static "images/logo/Socialhome-light-24.png" %}" class="mr-2"><span class="align-middle">{{ request.site.name }}</span></a>
@@ -142,4 +144,3 @@
     {% endblock javascript %}
 </body>
 </html>
-
