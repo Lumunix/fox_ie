@@ -9,10 +9,10 @@
 {% endblock %}
 
 {% block content %}
-    <div id="app">
-        <vue-snotify></vue-snotify>
-        <router-view/>
+    <div id="svelte-app">
+        <!-- Svelte components will be mounted here -->
     </div>
+
     <br/>
     <p>
         {% trans "Tip! Share pages easily by bookmarking our" %} <a href='javascript:{{ bookmarklet }}'>{% trans "bookmarklet" %}</a>.
@@ -24,9 +24,12 @@
     {{ block.super }}
     {{ form.media }}
     <script type="text/javascript" charset="utf-8">{% js_reverse_inline %}</script>
-    <script src="{% static 'dist/vue/js/app.js' %}"></script>
+
+    <!-- Load from manifest -->
+    <script type="module" src="{% static 'dist/svelte/main.js' %}"></script>
 {% endblock %}
 
 {% block css %}
     {{ block.super }}
+    <link rel="stylesheet" href="{% static 'dist/svelte/main.css' %}">
 {% endblock %}
