@@ -27,8 +27,9 @@
 {% endblock %}
 
 {% block content %}
-    <div id="svelte-app" class="streams-container">
-        <!-- Svelte components will be mounted here -->
+    <div id="app" class="streams-container">
+        <vue-snotify></vue-snotify>
+        <router-view/>
     </div>
 {% endblock %}
 
@@ -36,15 +37,11 @@
     {% json_context %}
     {{ block.super }}
     <script type="text/javascript" charset="utf-8">{% js_reverse_inline %}</script>
-
-    <!-- Load Svelte app -->
-    <script type="module" src="{% static 'dist/svelte/main.js' %}"></script>
-
+    <script src="{% static 'dist/vue/js/app.js' %}"></script>
     {% include "streams/includes/_twitter_widget.html" %}
     {% include "streams/includes/_wordpress_widget.html" %}
 {% endblock %}
 
 {% block css %}
     {{ block.super }}
-    <link rel="stylesheet" href="{% static 'dist/svelte/main.css' %}">
 {% endblock %}

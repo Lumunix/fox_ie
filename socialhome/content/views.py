@@ -45,7 +45,7 @@ class UserOwnsContentMixin(UserPassesTestMixin):
 
 class ContentCreateView(LoginRequiredMixin, TemplateView):
     model = Content
-    template_name = "content/vue.html"
+    template_name = "content/svelte.html"
     is_reply = False
 
     def get_context_data(self, **kwargs):
@@ -85,11 +85,11 @@ class ContentReplyView(ContentVisibleForUserMixin, ContentCreateView, SingleObje
                 mentions += f'@{self.object.root_parent.author.finger} '
         val.update({'mentions': mentions, 'rendered': self.parent.rendered})
         return(val)
-        
+
 
 class ContentUpdateView(UserOwnsContentMixin, DetailView):
     model = Content
-    template_name = "content/vue.html"
+    template_name = "content/svelte.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
