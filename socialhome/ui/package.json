@@ -20,6 +20,8 @@
     "vite": "^7.1.0"
   },
   "dependencies": {
+    "@mateothegreat/svelte5-router": "^2.16.8",
+    "@milkdown/crepe": "^7.15.3",
     "@tailwindcss/vite": "^4.1.11",
     "tailwindcss": "^4.1.11"
   }
