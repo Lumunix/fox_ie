@@ -2,7 +2,6 @@ import { defineConfig } from 'vite'
 import { svelte } from '@sveltejs/vite-plugin-svelte'
 import tailwindcss from "@tailwindcss/vite";
 
-
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
@@ -12,20 +11,12 @@ export default defineConfig({
   build: {
     outDir: '../static/dist/svelte',
     emptyOutDir: true,
+    manifest: true, // Re-enable manifest
     rollupOptions: {
       input: {
         main: './src/main.ts',
       },
-      output: {
-        entryFileNames: 'main.js',
-        chunkFileNames: '[name].js',
-        assetFileNames: (assetInfo) => {
-          if (assetInfo.name && assetInfo.name.endsWith('.css')) {
-            return 'main.css'
-          }
-          return '[name].[ext]'
-        }
-      }
+      // Remove custom output config to let Vite handle cache busting
     },
   },
   base: '/static/dist/svelte/',

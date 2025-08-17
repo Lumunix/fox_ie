@@ -3,6 +3,7 @@
 {% load json_context %}
 {% load js_reverse %}
 {% load static %}
+{% load vite_manifest %}
 
 {% block title %}
     {% include "content/_edit_title.html" %}
@@ -25,11 +26,11 @@
     {{ form.media }}
     <script type="text/javascript" charset="utf-8">{% js_reverse_inline %}</script>
 
-    <!-- Load from manifest -->
-    <script type="module" src="{% static 'dist/svelte/main.js' %}"></script>
+    <!-- Load from manifest with cache busting -->
+    {% vite_asset 'main' 'js' %}
 {% endblock %}
 
 {% block css %}
     {{ block.super }}
-    <link rel="stylesheet" href="{% static 'dist/svelte/main.css' %}">
+    {% vite_asset 'main' 'css' %}
 {% endblock %}
