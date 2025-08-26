@@ -8,29 +8,28 @@ import Publisher from './lib/components/publisher/Publisher.svelte';
 import ReplyPublisher from './lib/components/publisher/ReplyPublisher.svelte';
 import EditDispatcher from './lib/components/publisher/EditDispatcher.svelte';
 
-// Helper function to merge route params with additional props
-function $$(props = {}) {
-    return (route: any) => ({
-        ...route.params,
-        ...props,
-    });
-}
-
-// Helper function for publisher props
-function publisherProps(route: any) {
-    const { query } = route;
-    if (typeof query.url === 'string' && typeof query.title === 'string') {
-        return {
-            shareUrl: query.url,
-            shareTitle: query.title,
-            shareNotes: query.notes !== undefined ? query.notes : "",
-        };
-    }
-    return {};
-}
-
-// Route configurations
+// Route configurations - ORDER MATTERS! Most specific routes first
 export const routes: RouteConfig[] = [
+    // Most specific content routes FIRST
+    {
+        path: '/content/(?<contentId>.*)/~reply/',
+        component: ReplyPublisher,
+    },
+    {
+        path: '/content/(?<contentId>.*)/~edit/',
+        component: EditDispatcher,
+    },
+
+    // Publisher routes
+    {
+        path: '/content/create',
+        component: Publisher,
+    },
+    {
+        path: '/bookmarklet',
+        component: Publisher,
+    },
+
     // Contacts pages
     {
         path: '/p/~following/',
@@ -39,12 +38,6 @@ export const routes: RouteConfig[] = [
     {
         path: '/p/~followers/',
         component: AppFollowers,
-    },
-
-    // Root route
-    {
-        path: '/',
-        component: Stream,
     },
 
     // Stream routes
@@ -68,70 +61,36 @@ export const routes: RouteConfig[] = [
         path: '/streams/tags/',
         component: Stream,
     },
+    {
+        path: '/streams/tag/(?<tag>.*)',
+        component: Stream,
+    },
 
     // User routes
     {
-        path: '/u/:user',
+        path: '/u/(?<user>.*)',
         component: Stream,
-        props: $$(),
-    },
-    {
-        path: '/u/:user/all',
-        component: Stream,
-        props: $$(),
     },
 
     // Profile routes
     {
-        path: '/p/:uuid',
+        path: '/p/(?<uuid>.*)',
         component: Stream,
-        props: $$(),
-    },
-    {
-        path: '/p/:uuid/all',
-        component: Stream,
-        props: $$(),
     },
 
-    // Tag routes
-    {
-        path: '/streams/tag/:tag',
-        component: Stream,
-        props: $$(),
-    },
+    // // Content routes - AFTER the specific action routes
+    // {
+    //     path: '/content/(?<contentId>.*)/(?<shorttext>.*)',
+    //     component: Stream,
+    // },
+    // {
+    //     path: '/content/(?<contentId>.*)',
+    //     component: Stream,
+    // },
 
-    // Publisher routes
+    // Root route - should be last
     {
-        path: '/content/create',
-        component: Publisher,
-        props: publisherProps,
-    },
-    {
-        path: '/bookmarklet',
-        component: Publisher,
-        props: publisherProps,
-    },
-    {
-        path: '/content/:contentId/~edit/',
-        component: EditDispatcher,
-        props: $$(),
-    },
-    {
-        path: '/content/:contentId/~reply/',
-        component: ReplyPublisher,
-        props: (route: any) => ({ parentId: route.params.contentId }),
-    },
-
-    // Content routes
-    {
-        path: '/content/:contentId',
+        path: '/',
         component: Stream,
-        props: $$(),
-    },
-    {
-        path: '/content/:contentId/:shorttext',
-        component: Stream,
-        props: $$(),
     },
 ];
-
