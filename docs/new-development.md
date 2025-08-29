@@ -38,3 +38,7 @@ For instance, to rebuild the UI service:
 
 
 docker-compose exec django python manage.py rebuild_index
+
+
+- **Main app**: `http://localhost` (nginx handling routing)
+- **Django direct**: `http://localhost:8000` (bypass nginx for debugging)
