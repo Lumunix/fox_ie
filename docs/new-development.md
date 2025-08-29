@@ -35,3 +35,6 @@
 
 ### Rebuilding a Single Service
 For instance, to rebuild the UI service:
+
+
+docker-compose exec django python manage.py rebuild_index
