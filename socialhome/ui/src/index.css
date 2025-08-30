@@ -1,0 +1,99 @@
+@import './assets/base.css';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "./assets/primevue/tailwind.css";
+@import "tailwindcss/utilities";
+
+@layer base {
+  h1 {
+    @apply text-2xl font-medium;
+  }
+  h2 {
+    @apply text-xl font-medium;
+  }
+  h3 {
+    @apply text-lg font-medium;
+  }
+  ul {
+    @apply list-disc ml-8;
+  }
+  ol {
+    @apply list-decimal ml-8;
+  }
+  img {
+    @apply inline m-1;
+  }
+  p {
+    @apply my-2;
+  }
+  pre{
+    @apply bg-stone-300 text-stone-800 rounded p-1
+  }
+  blockquote {
+    @apply pl-2 border-s-4 border-stone-400 italic
+  }
+}
+
+
+
+.markdownx-preview blockquote, .editor-preview blockquote, .grid-item blockquote, .reply blockquote {
+  padding: .5rem 1rem;
+  margin-bottom: 1rem;
+  border-left: 0.25rem solid #B39A96;
+  font-style: italic; }
+
+.markdownx-preview span.invisible, .editor-preview span.invisible, .grid-item span.invisible, .reply span.invisible {
+  visibility: inherit !important; }
+
+.markdownx-preview img, .editor-preview img {
+  max-width: 100%; }
+
+.card {
+    @apply relative flex flex-col min-w-0 bg-white rounded;
+}
+
+.card-block {
+	@apply p-4;
+}
+
+.card-text:last-child {
+	@apply mb-0;
+}
+
+a.hashtag, a.mention, a.content-link {
+  @apply text-blue-500 underline hover:text-blue-600
+}
+
+a.opengraph-card {
+  @apply cursor-pointer no-underline text-stone-800 hover:text-stone-500 hover:no-underline; }
+  a.opengraph-card .card .opengraph-card-image {
+    @apply float-left mr-5 p-0 w-48;}
+  a.opengraph-card .card .opengraph-card-url {
+    @apply float-right pl-5 text-stone-400; }
+  a.opengraph-card img {
+    max-height: 200px; }
+
+.content-actions {
+  padding-top: 10px; }
+  .content-actions a, .content-actions button {
+    width: 100%;
+    cursor: pointer; }
+
+.replies-container {
+  padding-left: 10px; }
+  .replies-container img {
+    max-width: 100%; }
+
+.reply {
+  border-top: solid 1px #B39A96;
+  margin-top: 7px;
+  padding-top: 6px; }
+
+a.btn, button.btn {
+  padding: 0.6rem 0.95rem; }
+
+.btn > i {
+  padding: 3px; }
+
+.btn.button-no-pointer {
+  cursor: default; }

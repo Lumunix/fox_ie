@@ -1,0 +1,707 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"PO-Revision-Date: 2025-06-15 22:58+0000\n"
+"Last-Translator: Dirk <dirk@noreply.codeberg.org>\n"
+"Language-Team: German <https://translate.codeberg.org/projects/socialhome/"
+"newui/de/>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.11.4\n"
+
+#: src/components/AuthorBar.vue:67
+msgid "edited"
+msgstr "bearbeitet"
+
+#: src/components/AuthorBar.vue:72
+msgid "Are you sure? This action is irreversible."
+msgstr "Bist du sicher? Diese Aktion ist unumkehrbar."
+
+#: src/components/AuthorBar.vue:73
+msgid "Delete Content"
+msgstr "Inhalt löschen"
+
+#: src/components/AuthorBar.vue:76 src/components/ReplyEditor.vue:12
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: src/components/AuthorBar.vue:81 src/components/AuthorBar.vue:95
+msgid "Delete"
+msgstr "Löschen"
+
+#: src/components/AuthorBar.vue:91
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: src/components/AuthorBar.vue:102 src/components/ProfileEditor.vue:33
+msgid "Unfollow"
+msgstr "Entfolgen"
+
+#: src/components/AuthorBar.vue:102 src/components/ProfileEditor.vue:34
+msgid "Follow"
+msgstr "Folgen"
+
+#: src/components/AuthorBar.vue:107 src/components/ProfileEditor.vue:36
+msgid "Message"
+msgstr "Nachricht"
+
+#: src/components/ContactManager.vue:101
+msgid "Unfollow %{ num } contacts?"
+msgstr "%{ num } Kontakten entfolgen?"
+
+#: src/components/ContactManager.vue:102
+msgid "Contact manager"
+msgstr "Kontaktmanager"
+
+#: src/components/ContactManager.vue:105 src/components/ProfileContainer.vue:69
+msgid "Ignore"
+msgstr "Ignorieren"
+
+#: src/components/ContactManager.vue:110
+msgid "Proceed"
+msgstr "Fortfahren"
+
+#: src/components/ContactManager.vue:139
+msgid "Filter"
+msgstr "Filter"
+
+#: src/components/ContactManager.vue:142
+msgid "Disable filter"
+msgstr "Filter deaktivieren"
+
+#: src/components/ContactManager.vue:142
+msgid "Activate filter"
+msgstr "Filter aktivieren"
+
+#: src/components/ContactManager.vue:147
+msgid "Unfollow selected profiles"
+msgstr "Ausgewählte Profile entfolgen"
+
+#: src/components/ContentPublisher.vue:30
+msgid "Create new content"
+msgstr "Neuen Inhalt erstellen"
+
+#: src/components/ContentPublisher.vue:31
+msgid "Edit content"
+msgstr "Inhalt bearbeiten"
+
+#: src/components/ContentPublisher.vue:32
+msgid "Create new reply"
+msgstr "Neue Antwort erstellen"
+
+#: src/components/ContentPublisher.vue:33
+msgid "Edit reply"
+msgstr "Antwort bearbeiten"
+
+#: src/components/ContentPublisher.vue:50 src/routes.js:117
+msgid "Public"
+msgstr "Öffentlich"
+
+#: src/components/ContentPublisher.vue:51
+msgid "visible to everyone, including search bots"
+msgstr "sichtbar für alle, inklusive Suchroboter"
+
+#: src/components/ContentPublisher.vue:52 src/routes.js:89
+msgid "Limited"
+msgstr "Begrenzt"
+
+#: src/components/ContentPublisher.vue:53
+msgid "visible only to chosen friends"
+msgstr "nur für ausgewählte Freunde sichtbar"
+
+#: src/components/ContentPublisher.vue:54 src/routes.js:103
+msgid "Local"
+msgstr "Lokal"
+
+#: src/components/ContentPublisher.vue:55
+msgid "visible only to users of this instance"
+msgstr "nur für Benutzer dieser Instanz sichtbar"
+
+#: src/components/ContentPublisher.vue:56
+msgid "Only me"
+msgstr "Nur ich"
+
+#: src/components/ContentPublisher.vue:57
+msgid "visible only to me (can be used as draft)"
+msgstr "nur für mich sichtbar (kann als Entwurf genutzt werden)"
+
+#: src/components/ContentPublisher.vue:64
+msgid "Include mutuals"
+msgstr "Gegenseitige einschließen"
+
+#: src/components/ContentPublisher.vue:65
+msgid "Add OEmbed / OpenGraph preview"
+msgstr "OEmbed/OpenGraph-Vorschau hinzufügen"
+
+#: src/components/ContentPublisher.vue:66
+msgid "Disable comments"
+msgstr "Kommentare deaktivieren"
+
+#: src/components/ContentPublisher.vue:67
+msgid "Pinned post"
+msgstr "Angehefteter Beitrag"
+
+#: src/components/ContentPublisher.vue:152
+msgid "No content!"
+msgstr "Kein Inhalt!"
+
+#: src/components/ContentPublisher.vue:158
+msgid ""
+"Please select the \"Include mutuals\" option and/or include one or more "
+"mentions"
+msgstr ""
+"Bitte wähle die Option „Gegenseitige einschließen“, und/oder füge eine oder "
+"mehrere Nennungen hinzu"
+
+#: src/components/ContentPublisher.vue:174
+msgid "Content is unchanged"
+msgstr "Inhalt ist unverändert"
+
+#: src/components/ContentPublisher.vue:231
+#: src/components/ContentPublisher.vue:263
+msgid "Federate"
+msgstr "Föderieren"
+
+#: src/components/ContentPublisher.vue:234
+#: src/components/ContentPublisher.vue:237
+#: src/components/ContentPublisher.vue:266
+msgid "More options"
+msgstr "Weitere Optionen"
+
+#: src/components/ContentPublisher.vue:248
+#: src/components/ContentPublisher.vue:275
+msgid "Options"
+msgstr "Optionen"
+
+#: src/components/ContentPublisher.vue:249
+msgid "Visibilities"
+msgstr "Sichtbarkeiten"
+
+#: src/components/ContentPublisher.vue:286 src/components/ProfileEditor.vue:254
+#: src/components/ProfileEditor.vue:261
+msgid "Update"
+msgstr "Aktualisieren"
+
+#: src/components/ContentPublisher.vue:286
+msgid "Publish"
+msgstr "Veröffentlichen"
+
+#: src/components/LoginForm.vue:17
+msgid "Please Login"
+msgstr "Bitte anmelden"
+
+#: src/components/LoginForm.vue:20
+msgid "Enter user name"
+msgstr "Benutzername eingeben"
+
+#: src/components/LoginForm.vue:22
+msgid "Enter password"
+msgstr "Passwort eingeben"
+
+#: src/components/LoginForm.vue:30
+msgid "In Progress..."
+msgstr "In Bearbeitung..."
+
+#: src/components/LoginForm.vue:30
+msgid "Login"
+msgstr "Anmeldung"
+
+#: src/components/MarkdownEditor.vue:198 src/components/MarkdownEditor.vue:344
+msgid "Forbidden!"
+msgstr "Verboten!"
+
+#: src/components/MarkdownEditor.vue:198
+msgid "Media upload in code blocks not allowed"
+msgstr "Medienuploads in Codeblöcken ist nicht erlaubt"
+
+#: src/components/MarkdownEditor.vue:344
+msgid "Drag & drop in code blocks not allowed"
+msgstr "Drag&Drop in Codeblöcken ist nicht erlaubt"
+
+#: src/components/MarkdownEditor.vue:361 src/components/WysiwygEditor.vue:174
+msgid "Bold"
+msgstr "Fett"
+
+#: src/components/MarkdownEditor.vue:367 src/components/WysiwygEditor.vue:180
+msgid "Italic"
+msgstr "Kursiv"
+
+#: src/components/MarkdownEditor.vue:373 src/components/WysiwygEditor.vue:186
+msgid "Headings"
+msgstr "Überschriften"
+
+#: src/components/MarkdownEditor.vue:383 src/components/WysiwygEditor.vue:195
+msgid "Link"
+msgstr "Link"
+
+#: src/components/MarkdownEditor.vue:395 src/components/WysiwygEditor.vue:207
+#: src/helpers/UploadMedia.vue:149
+msgid "Enter url"
+msgstr "URL eingeben"
+
+#: src/components/MarkdownEditor.vue:401 src/components/WysiwygEditor.vue:213
+msgid "Media"
+msgstr "Medien"
+
+#: src/components/MarkdownEditor.vue:409 src/components/WysiwygEditor.vue:221
+msgid "Set media link / Upload media"
+msgstr "Medienlink setzen/Medien hochladen"
+
+#: src/components/MarkdownEditor.vue:411 src/components/WysiwygEditor.vue:223
+msgid "List"
+msgstr "Liste"
+
+#: src/components/MarkdownEditor.vue:418 src/components/WysiwygEditor.vue:230
+msgid "Ordered List"
+msgstr "Geordnete Liste"
+
+#: src/components/MarkdownEditor.vue:425 src/components/WysiwygEditor.vue:237
+msgid "Code"
+msgstr "Code"
+
+#: src/components/MarkdownEditor.vue:433 src/components/WysiwygEditor.vue:244
+msgid "Quote"
+msgstr "Zitat"
+
+#: src/components/MarkdownEditor.vue:439 src/components/WysiwygEditor.vue:251
+msgid "Capture"
+msgstr "Capture"
+
+#: src/components/MarkdownEditor.vue:446
+msgid "Preview"
+msgstr "Vorschau"
+
+#: src/components/NavigationBar.vue:12
+msgid "Actions"
+msgstr "Aktionen"
+
+#: src/components/NavigationBar.vue:15
+msgid "Streams"
+msgstr "Streams"
+
+#: src/components/NavigationBar.vue:112
+msgid "Create"
+msgstr "Erstellen"
+
+#: src/components/NavigationBar.vue:113
+msgid "Notifications"
+msgstr "Benachrichtigungen"
+
+#: src/components/NavigationBar.vue:114
+msgid "Messages"
+msgstr "Nachrichten"
+
+#: src/components/NavigationBar.vue:119
+msgid "Sign In"
+msgstr "Anmelden"
+
+#: src/components/NavigationBar.vue:120
+msgid "Register"
+msgstr "Registrieren"
+
+#: src/components/NavigationBar.vue:125 src/components/PreferenceManager.vue:16
+#: src/routes.js:299
+msgid "Profile"
+msgstr "Profil"
+
+#: src/components/NavigationBar.vue:127 src/components/PreferenceManager.vue:77
+msgid "Preferences"
+msgstr ""
+
+#: src/components/NavigationBar.vue:128
+msgid "Sign Out"
+msgstr "Abmelden"
+
+#: src/components/PreferenceManager.vue:17
+msgid "Profile - all content"
+msgstr ""
+
+#: src/components/PreferenceManager.vue:18
+#, fuzzy
+msgid "Followed stream"
+msgstr "Tag folgen"
+
+#: src/components/PreferenceManager.vue:19
+msgid "Local stream"
+msgstr ""
+
+#: src/components/PreferenceManager.vue:20
+#, fuzzy
+msgid "Public stream"
+msgstr "Öffentlich"
+
+#: src/components/PreferenceManager.vue:21
+msgid "Tags stream"
+msgstr ""
+
+#: src/components/PreferenceManager.vue:81
+msgid "Landing page"
+msgstr ""
+
+#: src/components/PreferenceManager.vue:85
+msgid "Choose which page you want to see as the landing page"
+msgstr ""
+
+#: src/components/PreferenceManager.vue:89
+msgid "Try the new UI"
+msgstr ""
+
+#: src/components/PreferenceManager.vue:92
+msgid "Uncheck to revert to the legacy UI (browser refresh required)"
+msgstr ""
+
+#: src/components/PreferenceManager.vue:101
+#: src/components/ProfileContainer.vue:74
+msgid "Save"
+msgstr "Speichern"
+
+#: src/components/ProfileContainer.vue:43
+msgid "Save order"
+msgstr "Reihenfolge speichern"
+
+#: src/components/ProfileContainer.vue:43
+msgid "Reorder"
+msgstr "Umsortieren"
+
+#: src/components/ProfileContainer.vue:65
+msgid "You have unsaved changes"
+msgstr "Du hast ungespeicherte Änderungen"
+
+#: src/components/ProfileContainer.vue:66 src/components/ProfileEditor.vue:167
+msgid "Profile editor"
+msgstr "Profileditor"
+
+#: src/components/ProfileContainer.vue:107 src/routes.js:295
+msgid "Posts from %{ name }"
+msgstr "Beiträge von %{ name }"
+
+#: src/components/ProfileContainer.vue:131
+msgid "Pinned posts"
+msgstr "Angeheftete Beiträge"
+
+#: src/components/ProfileContainer.vue:136
+msgid "All posts"
+msgstr "Alle Beiträge"
+
+#: src/components/ProfileContainer.vue:142
+msgid "Following"
+msgstr "Folgt"
+
+#: src/components/ProfileContainer.vue:148
+msgid "Followers"
+msgstr "Follower"
+
+#: src/components/ProfileEditor.vue:28
+msgid "Not implemented yet"
+msgstr "Noch nicht implementiert"
+
+#: src/components/ProfileEditor.vue:29
+msgid "This function will be implemented later"
+msgstr "Diese Funktion wird später implementiert"
+
+#: src/components/ProfileEditor.vue:35
+msgid "Bookmark"
+msgstr "Lesezeichen"
+
+#: src/components/ProfileEditor.vue:37
+msgid "Hide"
+msgstr "Ausblenden"
+
+#: src/components/ProfileEditor.vue:38
+msgid "Block"
+msgstr "Blockieren"
+
+#: src/components/ProfileEditor.vue:167
+msgid "Profile info"
+msgstr "Profilinformationen"
+
+#: src/components/ProfileEditor.vue:172
+msgid "Modify picture"
+msgstr "Bild ändern"
+
+#: src/components/ProfileEditor.vue:179
+msgid "Save changes"
+msgstr "Änderungen speichern"
+
+#: src/components/ProfileEditor.vue:188 src/components/ProfileEditor.vue:216
+msgid "Modify name"
+msgstr "Name ändern"
+
+#: src/components/ProfileEditor.vue:196 src/components/ProfileEditor.vue:210
+msgid "Modify avatar"
+msgstr "Avatar ändern"
+
+#: src/components/ProfileEditor.vue:200
+msgid "Modify bio"
+msgstr "Biografie ändern"
+
+#: src/components/ProfileEditor.vue:238
+msgid "No bio"
+msgstr "Keine Biografie"
+
+#: src/components/ProfileEditor.vue:242
+msgid "Update avatar"
+msgstr "Avatar aktualisieren"
+
+#: src/components/ProfileEditor.vue:249
+msgid "Update profile picture"
+msgstr "Profilbild aktualisieren"
+
+#: src/components/ReactionsBar.vue:38 src/components/StreamElement.vue:19
+msgid "Hide replies"
+msgstr "Antworten ausblenden"
+
+#: src/components/ReactionsBar.vue:39
+msgctxt "reactions"
+msgid "Reply"
+msgstr "Antwort"
+
+#: src/components/ReactionsBar.vue:39
+msgid "Show replies"
+msgstr "Antworten anzeigen"
+
+#: src/components/ReactionsBar.vue:58
+msgid "Unshare"
+msgstr "nicht mehr teilen"
+
+#: src/components/ReactionsBar.vue:58
+msgid "Share"
+msgstr "Teilen"
+
+#: src/components/ReplyEditor.vue:11
+msgid "Reply"
+msgstr "Antwort"
+
+#: src/components/ReplyEditor.vue:13
+msgid "Full Editor"
+msgstr "Vollständiger Editor"
+
+#: src/components/SearchContainer.vue:61
+msgid "Search Error"
+msgstr "Suchfehler"
+
+#: src/components/SearchContainer.vue:101
+msgid "Search"
+msgstr "Suchen"
+
+#: src/components/SingleContentContainer.vue:24 src/routes.js:205
+msgid "Single Content"
+msgstr "Einzelner Inhalt"
+
+#: src/components/TabManager.vue:40
+msgid "new post"
+msgid_plural "new posts"
+msgstr[0] "neuer Beitrag"
+msgstr[1] "neue Beiträge"
+
+#: src/components/TabManager.vue:42
+msgid "new"
+msgid_plural "new"
+msgstr[0] "neu"
+msgstr[1] "neu"
+
+#: src/components/TabManager.vue:46
+msgid "Unfollow tag"
+msgstr "Tag nicht mehr folgen"
+
+#: src/components/TabManager.vue:46
+msgid "Follow tag"
+msgstr "Tag folgen"
+
+#: src/components/TabManager.vue:52
+msgid "Toggle grid view"
+msgstr "Rasteransicht umschalten"
+
+#: src/components/TabManager.vue:52
+msgid "Toggle single column view"
+msgstr "Einspaltige Ansicht umschalten"
+
+#: src/components/TagStreamContainer.vue:14 src/routes.js:147
+msgid "Posts tagged with #%{ tag }"
+msgstr "Post mit #%{ tag } getaggt"
+
+#: src/components/WysiwygEditor.vue:162
+msgid "No or invalid media"
+msgstr "Keine oder ungültige Medien"
+
+#: src/helpers/codemirrorSetup.js:99
+msgid "Control character"
+msgstr "Steuerzeichen"
+
+#: src/helpers/codemirrorSetup.js:101
+msgid "Selection deleted"
+msgstr "Auswahl gelöscht"
+
+#: src/helpers/codemirrorSetup.js:103
+msgid "Folded lines"
+msgstr "Gefaltete Zeilen"
+
+#: src/helpers/codemirrorSetup.js:104
+msgid "Unfolded lines"
+msgstr "Entfaltete Zeilen"
+
+#: src/helpers/codemirrorSetup.js:105
+msgid "to"
+msgstr "nach"
+
+#: src/helpers/codemirrorSetup.js:106
+msgid "folded code"
+msgstr "gefalteter Code"
+
+#: src/helpers/codemirrorSetup.js:107
+msgid "unfold"
+msgstr "entfalten"
+
+#: src/helpers/codemirrorSetup.js:108
+msgid "Fold line"
+msgstr "Zeile falten"
+
+#: src/helpers/codemirrorSetup.js:109
+msgid "Unfold line"
+msgstr "Zeile entfalten"
+
+#: src/helpers/codemirrorSetup.js:111
+msgid "Go to line"
+msgstr "Gehe zu Zeile"
+
+#: src/helpers/codemirrorSetup.js:112
+msgid "go"
+msgstr "los"
+
+#: src/helpers/codemirrorSetup.js:113
+msgid "Find"
+msgstr "Finden"
+
+#: src/helpers/codemirrorSetup.js:114
+msgid "Replace"
+msgstr "Ersetzen"
+
+#: src/helpers/codemirrorSetup.js:115
+msgid "next"
+msgstr "weiter"
+
+#: src/helpers/codemirrorSetup.js:116
+msgid "previous"
+msgstr "zurück"
+
+#: src/helpers/codemirrorSetup.js:117
+msgid "all"
+msgstr "alle"
+
+#: src/helpers/codemirrorSetup.js:118
+msgid "match case"
+msgstr "Schreibung berücksichtigen"
+
+#: src/helpers/codemirrorSetup.js:119
+msgid "by word"
+msgstr "nach Wort"
+
+#: src/helpers/codemirrorSetup.js:120
+msgid "replace"
+msgstr "ersetzen"
+
+#: src/helpers/codemirrorSetup.js:121
+msgid "replace all"
+msgstr "alle ersetzen"
+
+#: src/helpers/codemirrorSetup.js:122
+msgid "close"
+msgstr "schließen"
+
+#: src/helpers/codemirrorSetup.js:123
+msgid "current match"
+msgstr "aktueller Treffer"
+
+#: src/helpers/codemirrorSetup.js:124
+msgid "replaced $ matches"
+msgstr "$ Treffer ersetzt"
+
+#: src/helpers/codemirrorSetup.js:125
+msgid "replaced match on line $"
+msgstr "Treffer in Zeile $ ersetzt"
+
+#: src/helpers/codemirrorSetup.js:126
+msgid "on line"
+msgstr "in Zeile"
+
+#: src/helpers/codemirrorSetup.js:128
+msgid "Completions"
+msgstr "Vervollständigungen"
+
+#: src/helpers/codemirrorSetup.js:130
+msgid "Diagnostics"
+msgstr "Diagnose"
+
+#: src/helpers/codemirrorSetup.js:131
+msgid "No diagnostics"
+msgstr "Keine Diagnose"
+
+#: src/helpers/timeago.js:21
+msgid "now"
+msgstr "jetzt"
+
+#: src/helpers/UploadMedia.vue:93
+msgid "No media URL"
+msgstr "Keine Medien-URL"
+
+#: src/helpers/UploadMedia.vue:153
+msgid "Upload media"
+msgstr "Medien hochladen"
+
+#: src/helpers/UploadMedia.vue:179
+msgid "Enter media url"
+msgstr "Medien-URL eingeben"
+
+#: src/helpers/UploadMedia.vue:187
+msgid "Keep original size"
+msgstr "Originalgröße behalten"
+
+#: src/helpers/UploadMedia.vue:189
+msgid "Enter media description"
+msgstr "Medienbeschreibung eingeben"
+
+#: src/helpers/UploadMedia.vue:200
+msgid "Help"
+msgstr "Hilfe"
+
+#: src/main.js:73
+msgid "Choose"
+msgstr "Auswählen"
+
+#: src/main.js:74
+msgid "No file chosen"
+msgstr "Keine Datei ausgewählt"
+
+#: src/routes.js:75
+msgid "Followed"
+msgstr "Gefolgt"
+
+#: src/routes.js:76
+msgid "Posts from people you follow"
+msgstr "Beiträge von Leuten denen du folgst"
+
+#: src/routes.js:90
+msgid "Posts from chosen friends"
+msgstr "Beiträge von ausgewählten Freunden"
+
+#: src/routes.js:104
+msgid "Posts from local users"
+msgstr "Beiträge von lokalen Benutzern"
+
+#: src/routes.js:118
+msgid "Posts from all over the Fediverse"
+msgstr "Beiträge aus dem gesamten Fediverse"
+
+#: src/routes.js:131
+msgid "Tags"
+msgstr "Tags"
+
+#: src/routes.js:132
+msgid "Posts from tags you follow"
+msgstr "Beiträge mit Tags denen du folgst"
+
+#~ msgid "Settings"
+#~ msgstr "Einstellungen"
